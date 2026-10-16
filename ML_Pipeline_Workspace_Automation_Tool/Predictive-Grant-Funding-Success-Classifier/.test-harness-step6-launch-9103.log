@@ -1,0 +1,18 @@
+ * Serving Flask app 'Predictive-Grant-Funding-Success-Classifier-flask-app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:9103
+ * Running on http://10.0.0.167:9103
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [14/Oct/2026 09:44:56] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [14/Oct/2026 09:44:56] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [14/Oct/2026 09:44:56] "GET /predict HTTP/1.1" 200 -
+127.0.0.1 - - [14/Oct/2026 09:44:56] "GET /predict HTTP/1.1" 200 -
+[2026-10-14 09:44:56,818] ERROR in Predictive-Grant-Funding-Success-Classifier-flask-app: predict_one() missing 1 required positional argument: 'raw_features'
+Traceback (most recent call last):
+  File "/home/zora/algorithms/ml-pipeline-workspace/output/Predictive-Grant-Funding-Success-Classifier/Predictive-Grant-Funding-Success-Classifier-flask-app.py", line 287, in predict
+    raw_results = [PREDICT_FN(record) for record in records]
+                   ^^^^^^^^^^^^^^^^^^
+TypeError: predict_one() missing 1 required positional argument: 'raw_features'
+127.0.0.1 - - [14/Oct/2026 09:44:56] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -

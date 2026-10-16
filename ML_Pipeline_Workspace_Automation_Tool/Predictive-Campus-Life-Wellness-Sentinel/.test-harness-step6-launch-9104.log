@@ -1,0 +1,27 @@
+ * Serving Flask app 'Predictive-Campus-Life-Wellness-Sentinel-flask-app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:9104
+ * Running on http://10.0.0.167:9104
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [14/Oct/2026 13:13:11] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [14/Oct/2026 13:13:11] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [14/Oct/2026 13:13:11] "GET /predict HTTP/1.1" 200 -
+127.0.0.1 - - [14/Oct/2026 13:13:11] "GET /predict HTTP/1.1" 200 -
+[2026-10-14 13:13:11,259] ERROR in Predictive-Campus-Life-Wellness-Sentinel-flask-app: 'NoneType' object is not iterable
+Traceback (most recent call last):
+  File "/home/zora/algorithms/ml-pipeline-workspace/output/Predictive-Campus-Life-Wellness-Sentinel/Predictive-Campus-Life-Wellness-Sentinel-flask-app.py", line 303, in predict
+    preds = model.predict(df)
+            ^^^^^^^^^^^^^^^^^
+  File "/home/zora/algorithms/ml-pipeline-workspace/output/Predictive-Campus-Life-Wellness-Sentinel/.venv/lib/python3.12/site-packages/sklearn/pipeline.py", line 794, in predict
+    Xt = transform.transform(Xt)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zora/algorithms/ml-pipeline-workspace/output/Predictive-Campus-Life-Wellness-Sentinel/.venv/lib/python3.12/site-packages/sklearn/utils/_set_output.py", line 327, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/zora/algorithms/ml-pipeline-workspace/output/Predictive-Campus-Life-Wellness-Sentinel/.venv/lib/python3.12/site-packages/sklearn/compose/_column_transformer.py", line 1064, in transform
+    diff = all_names - set(column_names)
+                       ^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable
+127.0.0.1 - - [14/Oct/2026 13:13:11] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
